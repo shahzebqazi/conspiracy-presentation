@@ -112,6 +112,8 @@
   const sentenceEl = document.getElementById('buildacon-sentence');
   const shareBtn = document.getElementById('share-con-btn');
 
+  const pluralVillains = ['The Lizard People'];
+
   function getSelected() {
     return {
       villain: state.villain,
@@ -121,11 +123,46 @@
     };
   }
 
+  function normalizeMethod(m) {
+    if (!m) return m;
+    const normalized = {
+      'via 5G towers': 'using 5G tower networks',
+      'through fluoride': 'using fluoride in the water supply',
+      'with chemtrails': 'using chemtrails',
+      'via social media algorithms': 'using social media algorithms',
+      'using 5G towers': 'using 5G tower networks',
+      'using fluoride': 'using fluoride in the water supply',
+      'using subliminal ads': 'using subliminal advertising'
+    };
+    return normalized[m] || m;
+  }
+
+  function buildCoverupClause(coverupPart, isPlural) {
+    if (!coverupPart) return '';
+    if (coverupPart.indexOf('and they cover it up ') === 0) {
+      return coverupPart;
+    }
+    const subj = isPlural ? 'they' : 'it';
+    const verb = isPlural ? 'cover' : 'covers';
+    return 'and ' + subj + ' ' + verb + ' it up ' + coverupPart;
+  }
+
+  function buildConspiracySentence(s) {
+    const villain = s.villain;
+    const method = normalizeMethod(s.method);
+    const target = s.target;
+    const coverupPart = s.coverup;
+    if (!villain || !method || !target || !coverupPart) return '';
+    const isPlural = pluralVillains.indexOf(villain) >= 0;
+    const verb = isPlural ? ' are ' : ' is ';
+    const coverup = buildCoverupClause(coverupPart, isPlural);
+    return villain + verb + method + ' to control ' + target + ', ' + coverup;
+  }
+
   function updateSentence() {
     const s = getSelected();
     if (s.villain && s.target && s.method && s.coverup) {
-      const verb = s.villain === 'The Lizard People' ? ' are ' : ' is ';
-      const text = s.villain + verb + s.method + ' to control ' + s.target + ', ' + s.coverup;
+      const text = buildConspiracySentence(s);
       if (sentenceEl) {
         sentenceEl.textContent = text;
         sentenceEl.classList.add('highlight');
