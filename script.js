@@ -133,7 +133,7 @@
       updateUrlFragment();
     } else {
       if (sentenceEl) {
-        sentenceEl.textContent = 'Pick one option from each column to generate your conspiracy.';
+        sentenceEl.textContent = 'Roll the dice above to generate your conspiracy.';
         sentenceEl.classList.remove('highlight');
       }
       if (shareBtn) shareBtn.style.display = 'none';
@@ -141,6 +141,24 @@
         window.history.replaceState(null, '', window.location.pathname + window.location.search);
       }
     }
+  }
+
+  function rollColumn(key) {
+    const col = document.querySelector('.buildacon-col[data-col="' + key + '"]');
+    if (!col) return;
+    const cards = col.querySelectorAll('.buildacon-card');
+    if (cards.length === 0) return;
+    cards.forEach(function (c) { c.classList.remove('selected'); });
+    const randomCard = cards[Math.floor(Math.random() * cards.length)];
+    randomCard.classList.add('selected');
+    state[key] = randomCard.getAttribute('data-value');
+    updateSentence();
+  }
+
+  function rollAll() {
+    buildaconCols.forEach(function (key) {
+      rollColumn(key);
+    });
   }
 
   function updateUrlFragment() {
@@ -187,18 +205,17 @@
     }
   }
 
-  document.querySelectorAll('.buildacon-col').forEach(function (col) {
-    const key = col.getAttribute('data-col');
-    if (!buildaconCols.includes(key)) return;
-    col.querySelectorAll('.buildacon-card').forEach(function (card) {
-      card.addEventListener('click', function () {
-        col.querySelectorAll('.buildacon-card').forEach(function (c) { c.classList.remove('selected'); });
-        this.classList.add('selected');
-        state[key] = this.getAttribute('data-value');
-        updateSentence();
-      });
+  document.querySelectorAll('.roll-col-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const key = this.getAttribute('data-col');
+      if (key) rollColumn(key);
     });
   });
+
+  const rollAllBtn = document.getElementById('buildacon-roll-all');
+  if (rollAllBtn) {
+    rollAllBtn.addEventListener('click', rollAll);
+  }
 
   if (shareBtn) {
     shareBtn.addEventListener('click', function () {

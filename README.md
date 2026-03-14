@@ -1,55 +1,51 @@
-# Conspiracy: Fact or Fiction?
+# A Conspiracy Theory Survival Guide
 
-A standalone, single-page HTML/CSS/JavaScript animated presentation about conspiracy theories, McCarthyism, and mass hysteria. Built for clarity, accessibility, and impact—no frameworks required.
+A single-page HTML/CSS/JavaScript presentation on conspiracy theories, logical fallacies, McCarthyism, and mass hysteria—plus a playful “roll the dice” conspiracy generator. No frameworks or build step.
 
 ## Live demo
 
-**GitHub Pages:** [https://YOUR_USERNAME.github.io/conspiracy-presentation/](https://YOUR_USERNAME.github.io/conspiracy-presentation/)
+**[View on GitHub Pages](https://YOUR_USERNAME.github.io/conspiracy-presentation/)**
 
-*(Replace `YOUR_USERNAME` with your GitHub username after enabling GitHub Pages.)*
+*(Replace `YOUR_USERNAME` with your GitHub username.)*
 
-## What’s inside
+---
 
-- **8 slides:** Title → The Hook (with counter) → McCarthyism → Mass Hysteria → 10 Proven Conspiracies → The Irony → Build-A-Con Workshop → Conclusion  
-- **Design:** Dark theme, orange/amber accents, Poppins + Roboto, Font Awesome 6 icons  
-- **Interactivity:** Slide navigation (arrows + keyboard), counting animation, fact-check toggles on conspiracy cards, **Build-A-Con** (pick Villain, Target, Method, Cover-up to generate a sentence, with shareable URL fragment)  
-- **Responsive:** Works on mobile, tablet, and desktop  
+## What’s in the presentation
 
-## Local development
+- **10 slides:** Title → The Hook → McCarthyism → Mass Hysteria → 10 Proven Conspiracies → The Irony → **Logical Fallacies** (how ad hominem, appeal to emotion, and slippery slope fuel hysteria) → **Survival Guide** (red flags and how to stay skeptical) → Build-A-Con Workshop → Conclusion
+- **Build-A-Con:** Roll dice to generate a random conspiracy (Villain, Target, Method, Cover-up). Options are hidden so the result is a surprise; shareable URL for your roll.
+- **Design:** Dark theme, orange accents, Poppins + Roboto, Font Awesome 6. Responsive for mobile, tablet, and desktop.
+- **Interactivity:** Slide nav (buttons + arrow keys), counter animation, fact-check toggles on conspiracy cards.
 
-1. Clone the repo:
+## Run locally
+
+```bash
+git clone https://github.com/YOUR_USERNAME/conspiracy-presentation.git
+cd conspiracy-presentation
+npx serve .
+```
+
+Then open the URL (e.g. `http://localhost:3000`). Or open `index.html` in a browser (some behavior may differ without a local server).
+
+## Publish to GitHub Pages
+
+1. **Create a new repo** on GitHub named `conspiracy-presentation` (no README, no .gitignore).
+2. **Push this project:**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/conspiracy-presentation.git
    cd conspiracy-presentation
-   ```
-2. Serve the folder with any static server (or open `index.html` in a browser; some features work better with a local server):
-   ```bash
-   npx serve .
-   # or: python3 -m http.server 8000
-   ```
-3. Open the URL (e.g. `http://localhost:3000` or `http://localhost:8000`).
-
-No build step or dependencies are required.
-
-## Enabling GitHub Pages
-
-1. Create a new repository on GitHub named `conspiracy-presentation` (or similar), then push this repo:
-   ```bash
    git remote add origin https://github.com/YOUR_USERNAME/conspiracy-presentation.git
    git push -u origin main
    ```
-2. In the repo on GitHub: **Settings → Pages**.  
-3. Under **Source**, choose **Deploy from a branch**.  
-4. Branch: **main**, folder: **/ (root)**.  
-5. Save. The site will be live at `https://YOUR_USERNAME.github.io/conspiracy-presentation/`.
+3. **Turn on Pages:** Repo → **Settings → Pages** → Source: **Deploy from a branch** → Branch: **main**, folder: **/ (root)** → Save.
+4. After a minute or two, the site is at `https://YOUR_USERNAME.github.io/conspiracy-presentation/`.
 
-## Credits and sources
+## Credits
 
-- **Icons:** [Font Awesome 6](https://fontawesome.com/)  
-- **Fonts:** [Google Fonts](https://fonts.google.com/) — Poppins, Roboto  
-- **Images:** Unsplash (CC0), [Wikimedia Commons](https://commons.wikimedia.org/) (e.g. Joseph McCarthy, public domain)  
-- **Content:** The “10 proven conspiracies” are based on declassified documents, congressional reports, and established historical research. See the **References & sources** section in the footer of the presentation for links and citations.
+- **Icons:** [Font Awesome 6](https://fontawesome.com/)
+- **Fonts:** [Google Fonts](https://fonts.google.com/) — Poppins, Roboto
+- **Images:** Unsplash (CC0), Wikimedia Commons (e.g. Joseph McCarthy, public domain), Know Your Meme (Pepe Silvia / Charlie Day)
+- **Content:** The “10 proven conspiracies” and sources are cited in the presentation footer.
 
 ## License
 
-Code in this repository is offered for reuse under the MIT License. Image and historical content credits remain as stated above and in the presentation footer.
+MIT. Image and historical credits remain as stated above and in the presentation.

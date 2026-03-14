@@ -132,6 +132,10 @@ body {
   background: linear-gradient(135deg, rgba(13, 17, 23, 0.92) 0%, rgba(13, 17, 23, 0.85) 100%);
 }
 
+.slide-1-bg::after {
+  background: linear-gradient(135deg, rgba(13, 17, 23, 0.88) 0%, rgba(13, 17, 23, 0.82) 100%);
+}
+
 .slide-content {
   position: relative;
   z-index: 1;
@@ -594,6 +598,104 @@ body {
   }
 }
 
+/* ===== Slides 7–8: Logical fallacies ===== */
+.fallacy-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.fallacy-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.fallacy-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.fallacy-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-elevated);
+  border-radius: var(--radius-sm);
+  color: var(--accent);
+  font-size: 1.35rem;
+  margin-bottom: 0.75rem;
+}
+
+.fallacy-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+  color: var(--text);
+}
+
+.fallacy-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.55;
+}
+
+.red-flags {
+  margin-top: 1rem;
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.red-flags h3 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  margin: 0 0 1rem;
+  color: var(--accent);
+}
+
+.red-flags ul {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+}
+
+.red-flags li {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.red-flags li i {
+  color: var(--accent);
+  margin-right: 0.35rem;
+}
+
+.survival-cta {
+  font-size: 1rem;
+  color: var(--text);
+  margin: 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.survival-cta strong {
+  color: var(--accent);
+}
+
+@media (max-width: 900px) {
+  .fallacy-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ===== Slide 7: Build-A-Con ===== */
 .buildacon-columns {
   display: grid;
@@ -602,20 +704,69 @@ body {
   margin-bottom: 2rem;
 }
 
+.buildacon-roll-all-wrap {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.roll-all-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--bg-dark);
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.roll-all-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 24px var(--accent-glow);
+}
+
+.roll-all-btn i {
+  font-size: 1.25rem;
+}
+
 .buildacon-col h4 {
   font-family: var(--font-heading);
   font-size: 0.95rem;
-  margin: 0 0 0.75rem;
+  margin: 0 0 0.5rem;
   color: var(--accent);
   display: flex;
   align-items: center;
   gap: 0.4rem;
 }
 
+.roll-col-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.85rem;
+  color: var(--accent);
+  background: var(--bg-elevated);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  margin-bottom: 0.75rem;
+  transition: background var(--transition), color var(--transition), transform var(--transition);
+}
+
+.roll-col-btn:hover {
+  background: var(--accent);
+  color: var(--bg-dark);
+  transform: scale(1.03);
+}
+
 .buildacon-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  display: none; /* Hidden so the rolled conspiracy is a surprise */
 }
 
 .buildacon-card {
@@ -631,9 +782,9 @@ body {
 }
 
 .buildacon-card:hover {
-  border-color: var(--accent);
+  border-color: var(--border);
   background: var(--bg-elevated);
-  transform: translateX(4px);
+  cursor: default;
 }
 
 .buildacon-card.selected {

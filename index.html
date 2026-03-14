@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Conspiracy: Fact or Fiction?</title>
-  <meta name="description" content="An animated presentation on conspiracy theories, McCarthyism, and mass hysteria.">
+  <title>A Conspiracy Theory Survival Guide</title>
+  <meta name="description" content="A survival guide to conspiracy theories, logical fallacies, McCarthyism, and mass hysteria.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
@@ -14,19 +14,19 @@
 <body>
   <div class="slide-nav" aria-label="Slide navigation">
     <button type="button" class="nav-btn prev" aria-label="Previous slide" title="Previous"><i class="fa-solid fa-chevron-left"></i></button>
-    <span class="slide-indicator"><span class="current">1</span> / <span class="total">8</span></span>
+    <span class="slide-indicator"><span class="current">1</span> / <span class="total">10</span></span>
     <button type="button" class="nav-btn next" aria-label="Next slide" title="Next"><i class="fa-solid fa-chevron-right"></i></button>
   </div>
 
   <main class="presentation">
     <!-- Slide 1: Title -->
     <section class="slide slide-1 active" id="slide-1" data-slide="1">
-      <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=1920&q=80');"></div>
+      <div class="slide-bg slide-1-bg" style="background-image: url('https://i.kym-cdn.com/entries/icons/facebook/000/022/524/pepe_silvia_meme_banner.jpg');"></div>
       <div class="watermark">CLASSIFIED</div>
       <div class="slide-content">
         <span class="stamp declassified">DECLASSIFIED</span>
-        <h1 class="title">Conspiracy: Fact or Fiction?</h1>
-        <p class="subtitle">What if the craziest ones were true?</p>
+        <h1 class="title">A Conspiracy Theory Survival Guide</h1>
+        <p class="subtitle">Spot the fallacies. Stay skeptical.</p>
       </div>
     </section>
 
@@ -39,7 +39,7 @@
           <p class="lead">...but I kept finding ones that turned out to be <strong>real</strong>.</p>
         </div>
         <div class="counter-block">
-          <span class="counter-label">The number I was looking for:</span>
+          <span class="counter-label">Unfortunately I couldn't find a single fun conspiracy theory.</span>
           <div class="counter" data-target="10" aria-live="polite">0</div>
         </div>
       </div>
@@ -217,15 +217,63 @@
       </div>
     </section>
 
-    <!-- Slide 7: Build-A-Con Workshop -->
-    <section class="slide slide-7" id="slide-7" data-slide="7">
+    <!-- Slide 7: Logical Fallacies (part 1) -->
+    <section class="slide slide-fallacies" id="slide-7" data-slide="7">
+      <div class="slide-bg pattern-docs"></div>
+      <div class="slide-content">
+        <h2 class="slide-heading"><i class="fa-solid fa-bullhorn"></i> How Hysteria Sells: Logical Fallacies in Rhetoric</h2>
+        <p class="intro">Orators who profit from hysteria—through power, money, or influence—often rely on logical fallacies to bypass critical thinking.</p>
+        <div class="fallacy-cards">
+          <article class="fallacy-card">
+            <div class="fallacy-icon"><i class="fa-solid fa-user-xmark"></i></div>
+            <h3>Ad hominem</h3>
+            <p>Attacking the <em>person</em> instead of the argument. &ldquo;Don&rsquo;t listen to them—they&rsquo;re one of them / paid off / crazy.&rdquo; Discredits the messenger so the audience never has to engage with evidence.</p>
+          </article>
+          <article class="fallacy-card">
+            <div class="fallacy-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+            <h3>Appeal to emotion</h3>
+            <p>Using fear, anger, or outrage <em>instead of evidence</em>. Makes you feel first, think second (or never). Keeps audiences in a state of alarm so they stop asking for proof.</p>
+          </article>
+          <article class="fallacy-card">
+            <div class="fallacy-icon"><i class="fa-solid fa-arrow-trend-down"></i></div>
+            <h3>Slippery slope</h3>
+            <p>Claiming one step will <em>inevitably</em> lead to disaster. &ldquo;If we allow X, then Y and Z will follow.&rdquo; Creates a false sense of urgency and inevitability so you act before you think.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 8: Logical Fallacies (part 2) – Survival tips -->
+    <section class="slide slide-fallacies slide-survival" id="slide-8" data-slide="8">
+      <div class="slide-bg pattern-topo"></div>
+      <div class="slide-content">
+        <h2 class="slide-heading"><i class="fa-solid fa-shield-halved"></i> Survival Guide: Spot the Pattern</h2>
+        <p class="intro">These fallacies work together: an orator identifies an enemy (ad hominem against critics), stokes fear (appeal to emotion), and warns that inaction means doom (slippery slope). The profit comes from attention, donations, book sales, or political power.</p>
+        <div class="red-flags">
+          <h3>Red flags</h3>
+          <ul>
+            <li><i class="fa-solid fa-circle-exclamation"></i> Someone attacks <em>people</em> instead of addressing the argument or evidence.</li>
+            <li><i class="fa-solid fa-circle-exclamation"></i> Emotion is cranked up while evidence is downplayed or dismissed.</li>
+            <li><i class="fa-solid fa-circle-exclamation"></i> You&rsquo;re told the sky is falling and you must act <em>now</em>—or it&rsquo;s too late.</li>
+          </ul>
+          <p class="survival-cta">When you see these patterns: <strong>pause</strong>. Ask for evidence. Stay skeptical.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 9: Build-A-Con Workshop -->
+    <section class="slide slide-7" id="slide-9" data-slide="9">
       <div class="slide-bg pattern-topo"></div>
       <div class="slide-content">
         <h2 class="slide-heading"><i class="fa-solid fa-wand-magic-sparkles"></i> Build-A-Con Workshop</h2>
-        <p class="intro">Pick one from each column to build your own ridiculous conspiracy theory.</p>
+        <p class="intro">Roll each category (or roll all) to generate a random ridiculous conspiracy theory.</p>
+        <div class="buildacon-roll-all-wrap">
+          <button type="button" class="roll-all-btn" id="buildacon-roll-all"><i class="fa-solid fa-dice"></i> Roll the conspiracy</button>
+        </div>
         <div class="buildacon-columns">
           <div class="buildacon-col" data-col="villain">
             <h4><i class="fa-solid fa-mask"></i> Villain</h4>
+            <button type="button" class="roll-col-btn" data-col="villain" aria-label="Roll Villain"><i class="fa-solid fa-dice"></i> Roll</button>
             <div class="buildacon-cards">
               <button type="button" class="buildacon-card" data-value="Big Avocado">Big Avocado</button>
               <button type="button" class="buildacon-card" data-value="The Lizard People">The Lizard People</button>
@@ -237,6 +285,7 @@
           </div>
           <div class="buildacon-col" data-col="target">
             <h4><i class="fa-solid fa-bullseye"></i> Target</h4>
+            <button type="button" class="roll-col-btn" data-col="target" aria-label="Roll Target"><i class="fa-solid fa-dice"></i> Roll</button>
             <div class="buildacon-cards">
               <button type="button" class="buildacon-card" data-value="your morning routine">your morning routine</button>
               <button type="button" class="buildacon-card" data-value="your dreams">your dreams</button>
@@ -248,6 +297,7 @@
           </div>
           <div class="buildacon-col" data-col="method">
             <h4><i class="fa-solid fa-wrench"></i> Method</h4>
+            <button type="button" class="roll-col-btn" data-col="method" aria-label="Roll Method"><i class="fa-solid fa-dice"></i> Roll</button>
             <div class="buildacon-cards">
               <button type="button" class="buildacon-card" data-value="using mind-control chemicals in tap water">using mind-control chemicals in tap water</button>
               <button type="button" class="buildacon-card" data-value="via 5G towers">via 5G towers</button>
@@ -259,6 +309,7 @@
           </div>
           <div class="buildacon-col" data-col="coverup">
             <h4><i class="fa-solid fa-vest-patches"></i> Cover-up</h4>
+            <button type="button" class="roll-col-btn" data-col="coverup" aria-label="Roll Cover-up"><i class="fa-solid fa-dice"></i> Roll</button>
             <div class="buildacon-cards">
               <button type="button" class="buildacon-card" data-value="and they cover it up by funding wellness influencers.">and they cover it up by funding wellness influencers.</button>
               <button type="button" class="buildacon-card" data-value="and they cover it up by controlling the mainstream media.">and they cover it up by controlling the mainstream media.</button>
@@ -270,14 +321,14 @@
           </div>
         </div>
         <div class="buildacon-output">
-          <p class="buildacon-sentence" id="buildacon-sentence">Pick one option from each column to generate your conspiracy.</p>
+          <p class="buildacon-sentence" id="buildacon-sentence">Roll the dice above to generate your conspiracy.</p>
           <button type="button" class="share-con-btn" id="share-con-btn" style="display: none;"><i class="fa-solid fa-link"></i> Copy shareable link</button>
         </div>
       </div>
     </section>
 
-    <!-- Slide 8: Conclusion -->
-    <section class="slide slide-8" id="slide-8" data-slide="8">
+    <!-- Slide 10: Conclusion -->
+    <section class="slide slide-8" id="slide-10" data-slide="10">
       <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=1920&q=80');"></div>
       <div class="slide-content">
         <span class="stamp declassified">DECLASSIFIED</span>
