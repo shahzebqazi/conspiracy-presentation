@@ -4,9 +4,7 @@ A single-page HTML/CSS/JavaScript presentation on conspiracy theories, logical f
 
 ## Live demo
 
-**[View on GitHub Pages](https://YOUR_USERNAME.github.io/conspiracy-presentation/)**
-
-*(Replace `YOUR_USERNAME` with your GitHub username.)*
+**[View on GitHub Pages](https://shahzebqazi.github.io/conspiracy-presentation/)**
 
 ---
 
@@ -20,7 +18,7 @@ A single-page HTML/CSS/JavaScript presentation on conspiracy theories, logical f
 ## Run locally
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/conspiracy-presentation.git
+git clone https://github.com/shahzebqazi/conspiracy-presentation.git
 cd conspiracy-presentation
 npx serve .
 ```
@@ -33,11 +31,11 @@ Then open the URL (e.g. `http://localhost:3000`). Or open `index.html` in a brow
 2. **Push this project:**
    ```bash
    cd conspiracy-presentation
-   git remote add origin https://github.com/YOUR_USERNAME/conspiracy-presentation.git
+   git remote add origin https://github.com/shahzebqazi/conspiracy-presentation.git
    git push -u origin main
    ```
 3. **Turn on Pages:** Repo → **Settings → Pages** → Source: **Deploy from a branch** → Branch: **main**, folder: **/ (root)** → Save.
-4. After a minute or two, the site is at `https://YOUR_USERNAME.github.io/conspiracy-presentation/`.
+4. After a minute or two, the site is at `https://shahzebqazi.github.io/conspiracy-presentation/`.
 
 ## Credits
 
