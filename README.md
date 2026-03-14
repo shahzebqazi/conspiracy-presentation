@@ -33,11 +33,15 @@ No build step or dependencies are required.
 
 ## Enabling GitHub Pages
 
-1. Push this repo to GitHub.  
-2. In the repo: **Settings → Pages**.  
+1. Create a new repository on GitHub named `conspiracy-presentation` (or similar), then push this repo:
+   ```bash
+   git remote add origin https://github.com/YOUR_USERNAME/conspiracy-presentation.git
+   git push -u origin main
+   ```
+2. In the repo on GitHub: **Settings → Pages**.  
 3. Under **Source**, choose **Deploy from a branch**.  
-4. Branch: **main** (or **master**), folder: **/ (root)**.  
-5. Save. The site will be at `https://<username>.github.io/conspiracy-presentation/`.
+4. Branch: **main**, folder: **/ (root)**.  
+5. Save. The site will be live at `https://YOUR_USERNAME.github.io/conspiracy-presentation/`.
 
 ## Credits and sources
 
