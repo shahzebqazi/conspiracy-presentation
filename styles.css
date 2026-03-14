@@ -1,0 +1,828 @@
+/* ===== Variables & Base ===== */
+:root {
+  --bg-dark: #0d1117;
+  --bg-card: #161b22;
+  --bg-elevated: #21262d;
+  --text: #e6edf3;
+  --text-muted: #8b949e;
+  --accent: #f0883e;
+  --accent-dim: #c76d2a;
+  --accent-glow: rgba(240, 136, 62, 0.4);
+  --danger: #f85149;
+  --success: #3fb950;
+  --border: #30363d;
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --transition: 0.3s ease;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg-dark);
+  overflow-x: hidden;
+}
+
+/* ===== Slide navigation ===== */
+.slide-nav {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  z-index: 100;
+  box-shadow: var(--shadow);
+}
+
+.nav-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: var(--bg-elevated);
+  color: var(--accent);
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.nav-btn:hover {
+  background: var(--accent);
+  color: var(--bg-dark);
+  transform: scale(1.05);
+}
+
+.nav-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.slide-indicator {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.slide-indicator .current {
+  color: var(--accent);
+}
+
+/* ===== Presentation & slides ===== */
+.presentation {
+  position: relative;
+}
+
+.slide {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.5rem 6rem;
+  position: relative;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  pointer-events: none;
+}
+
+.slide.active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.slide-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.slide-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(13, 17, 23, 0.92) 0%, rgba(13, 17, 23, 0.85) 100%);
+}
+
+.slide-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-25deg);
+  font-family: var(--font-heading);
+  font-size: clamp(4rem, 15vw, 10rem);
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.03);
+  pointer-events: none;
+  user-select: none;
+}
+
+.pattern-topo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 30h60M30 0v60' stroke='%23ffffff' stroke-opacity='0.03' stroke-width='0.5' fill='none'/%3E%3C/svg%3E");
+  z-index: 0;
+}
+
+.pattern-docs::before {
+  content: 'CLASSIFIED';
+  position: absolute;
+  bottom: 10%;
+  right: 5%;
+  font-size: 3rem;
+  color: rgba(255, 255, 255, 0.02);
+  letter-spacing: 0.2em;
+  z-index: 0;
+}
+
+/* ===== Stamps ===== */
+.stamp {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  transform: rotate(-5deg);
+  margin-bottom: 1rem;
+}
+
+.stamp.declassified {
+  font-size: 0.85rem;
+  padding: 0.5rem 1rem;
+}
+
+.stamp.small-stamp {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 0.65rem;
+  opacity: 0.7;
+}
+
+/* ===== Slide 1: Title ===== */
+.slide-1 .slide-content {
+  text-align: center;
+}
+
+.slide-1 .title {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(2.25rem, 6vw, 4rem);
+  line-height: 1.2;
+  margin: 0 0 0.5rem;
+  text-shadow: 0 0 40px var(--accent-glow);
+}
+
+.slide-1 .subtitle {
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: var(--text-muted);
+  margin: 0;
+  font-style: italic;
+}
+
+/* ===== Slide 2: Hook ===== */
+.hook-text {
+  margin-bottom: 2rem;
+}
+
+.hook-text .lead {
+  font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+  margin: 0.75rem 0;
+  max-width: 640px;
+}
+
+.hook-text em {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.hook-text strong {
+  color: var(--accent);
+}
+
+.counter-block {
+  text-align: center;
+}
+
+.counter-label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.counter {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(4rem, 15vw, 8rem);
+  color: var(--accent);
+  line-height: 1;
+  text-shadow: 0 0 60px var(--accent-glow);
+}
+
+/* ===== Slide headings ===== */
+.slide-heading {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin: 0 0 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.slide-heading i {
+  color: var(--accent);
+}
+
+.intro {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin: 0 0 2rem;
+  max-width: 720px;
+}
+
+/* ===== Slide 3: McCarthyism ===== */
+.mccarthy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.mccarthy-text ul {
+  margin: 1rem 0;
+  padding-left: 1.25rem;
+}
+
+.mccarthy-text li {
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.mccarthy-text li i {
+  color: var(--accent);
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.mccarthy-text .small {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 1rem;
+}
+
+.mccarthy-img {
+  margin: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.mccarthy-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.mccarthy-img figcaption {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  background: var(--bg-elevated);
+}
+
+@media (max-width: 768px) {
+  .mccarthy-grid {
+    grid-template-columns: 1fr;
+  }
+  .mccarthy-img {
+    order: -1;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
+/* ===== Slide 4: Mass Hysteria ===== */
+.hysteria-diagram {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem 1rem;
+  margin-top: 2rem;
+}
+
+.diagram-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  min-width: 120px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.diagram-item:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.icon-wrap {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-elevated);
+  border-radius: 50%;
+  color: var(--accent);
+  font-size: 1.25rem;
+}
+
+.diagram-item span {
+  font-size: 0.85rem;
+  text-align: center;
+  color: var(--text);
+}
+
+.diagram-arrow {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+  .diagram-arrow {
+    display: none;
+  }
+  .hysteria-diagram {
+    flex-direction: column;
+  }
+}
+
+/* ===== Slide 5: Conspiracy cards ===== */
+.conspiracies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.conspiracy-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  position: relative;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  overflow: hidden;
+}
+
+.conspiracy-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 30px var(--accent-glow);
+  border-color: var(--accent);
+}
+
+.card-icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-elevated);
+  border-radius: var(--radius-sm);
+  color: var(--accent);
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.conspiracy-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  margin: 0 0 0.5rem;
+  color: var(--text);
+}
+
+.conspiracy-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0 0 0.75rem;
+  line-height: 1.5;
+}
+
+.card-img {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+  height: 100px;
+  background: var(--bg-elevated);
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.fact-check-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.8rem;
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background var(--transition), border-color var(--transition);
+}
+
+.fact-check-btn:hover {
+  background: var(--bg-elevated);
+  border-color: var(--accent);
+}
+
+.conspiracy-card {
+  position: relative;
+}
+
+.fact-check-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  padding: 0.75rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition), visibility var(--transition);
+}
+
+.conspiracy-card.show-tooltip .fact-check-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ===== Slide 6: Irony ===== */
+.irony-split {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.irony-side {
+  padding: 2rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  text-align: center;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.irony-side:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 24px var(--accent-glow);
+}
+
+.mccarthy-side .irony-icon { color: var(--danger); }
+.real-side .irony-icon { color: var(--success); }
+
+.irony-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.irony-side h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  margin: 0 0 0.75rem;
+}
+
+.irony-side p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin: 0 0 1rem;
+}
+
+.irony-side ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.irony-side li {
+  font-size: 0.9rem;
+  padding: 0.25rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.irony-side li i {
+  color: var(--accent);
+}
+
+.irony-vs {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .irony-split {
+    grid-template-columns: 1fr;
+  }
+  .irony-vs {
+    order: -1;
+  }
+}
+
+/* ===== Slide 7: Build-A-Con ===== */
+.buildacon-columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.buildacon-col h4 {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  margin: 0 0 0.75rem;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.buildacon-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.buildacon-card {
+  padding: 0.6rem 0.75rem;
+  font-size: 0.85rem;
+  text-align: left;
+  background: var(--bg-card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  cursor: pointer;
+  transition: background var(--transition), border-color var(--transition), transform var(--transition);
+}
+
+.buildacon-card:hover {
+  border-color: var(--accent);
+  background: var(--bg-elevated);
+  transform: translateX(4px);
+}
+
+.buildacon-card.selected {
+  border-color: var(--accent);
+  background: rgba(240, 136, 62, 0.15);
+  color: var(--accent);
+  box-shadow: 0 0 16px var(--accent-glow);
+}
+
+.buildacon-output {
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  min-height: 80px;
+}
+
+.buildacon-sentence {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin: 0 0 1rem;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.buildacon-sentence.highlight {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.share-con-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: var(--accent);
+  background: var(--bg-elevated);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+
+.share-con-btn:hover {
+  background: var(--accent);
+  color: var(--bg-dark);
+}
+
+@media (max-width: 1024px) {
+  .buildacon-columns {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .buildacon-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Slide 8: Conclusion ===== */
+.slide-8 .slide-content {
+  text-align: center;
+}
+
+.conclusion-lead {
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  margin: 0 0 0.5rem;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.conclusion-cta {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+  color: var(--accent);
+  margin: 0 0 2rem;
+}
+
+.conclusion-img {
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.conclusion-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  padding: 3rem 1.5rem;
+  margin-top: 2rem;
+}
+
+.footer-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.site-footer h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  margin: 0 0 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent);
+}
+
+.footer-note {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0 0 1.5rem;
+}
+
+.sources-list {
+  margin: 0 0 1.5rem;
+  padding-left: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.sources-list a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.sources-list a:hover {
+  text-decoration: underline;
+}
+
+.credits {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0.5rem 0 0;
+  opacity: 0.8;
+}
+
+/* ===== Intersection Observer animations ===== */
+.slide.animate-in .slide-content {
+  animation: fadeUp 0.7s ease forwards;
+}
+
+.slide.animate-in .conspiracy-card {
+  animation: fadeUp 0.5s ease forwards;
+}
+
+.slide.animate-in .buildacon-col {
+  animation: fadeUp 0.5s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stagger conspiracy cards */
+.conspiracies-grid .conspiracy-card {
+  animation-delay: calc(var(--i, 0) * 0.05s);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+  .slide {
+    padding: 3rem 1rem 5rem;
+  }
+  .slide-nav {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+  .nav-btn {
+    width: 36px;
+    height: 36px;
+  }
+}

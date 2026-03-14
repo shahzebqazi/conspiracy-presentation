@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conspiracy: Fact or Fiction?</title>
+  <meta name="description" content="An animated presentation on conspiracy theories, McCarthyism, and mass hysteria.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="slide-nav" aria-label="Slide navigation">
+    <button type="button" class="nav-btn prev" aria-label="Previous slide" title="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+    <span class="slide-indicator"><span class="current">1</span> / <span class="total">8</span></span>
+    <button type="button" class="nav-btn next" aria-label="Next slide" title="Next"><i class="fa-solid fa-chevron-right"></i></button>
+  </div>
+
+  <main class="presentation">
+    <!-- Slide 1: Title -->
+    <section class="slide slide-1 active" id="slide-1" data-slide="1">
+      <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1585829365295-ab7cd400c167?w=1920&q=80');"></div>
+      <div class="watermark">CLASSIFIED</div>
+      <div class="slide-content">
+        <span class="stamp declassified">DECLASSIFIED</span>
+        <h1 class="title">Conspiracy: Fact or Fiction?</h1>
+        <p class="subtitle">What if the craziest ones were true?</p>
+      </div>
+    </section>
+
+    <!-- Slide 2: The Hook -->
+    <section class="slide slide-2" id="slide-2" data-slide="2">
+      <div class="slide-bg pattern-topo"></div>
+      <div class="slide-content">
+        <div class="hook-text">
+          <p class="lead">I set out to find ten conspiracy theories that were <em>false</em>...</p>
+          <p class="lead">...but I kept finding ones that turned out to be <strong>real</strong>.</p>
+        </div>
+        <div class="counter-block">
+          <span class="counter-label">The number I was looking for:</span>
+          <div class="counter" data-target="10" aria-live="polite">0</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 3: McCarthyism -->
+    <section class="slide slide-3" id="slide-3" data-slide="3">
+      <div class="slide-bg pattern-docs"></div>
+      <div class="slide-content">
+        <h2 class="slide-heading"><i class="fa-solid fa-gavel"></i> McCarthyism Defined</h2>
+        <div class="mccarthy-grid">
+          <div class="mccarthy-text">
+            <p>Senator <strong>Joseph McCarthy</strong> led a wave of anti-communist hysteria in the 1950s. His tactics included:</p>
+            <ul>
+              <li><i class="fa-solid fa-circle-exclamation"></i> <strong>Accusations without evidence</strong> — naming alleged communists with no proof</li>
+              <li><i class="fa-solid fa-list"></i> <strong>Blacklisting</strong> — artists, writers, and professionals barred from work</li>
+              <li><i class="fa-solid fa-user-slash"></i> <strong>Ruined lives</strong> — careers destroyed, families torn apart</li>
+            </ul>
+            <p class="small">HUAC (House Un-American Activities Committee) held hearings that turned suspicion into a weapon.</p>
+          </div>
+          <figure class="mccarthy-img">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Joseph_McCarthy.jpg/440px-Joseph_McCarthy.jpg" alt="Senator Joseph McCarthy" loading="lazy">
+            <figcaption>Senator Joseph McCarthy (public domain)</figcaption>
+          </figure>
+        </div>
+        <span class="stamp small-stamp">REDACTED</span>
+      </div>
+    </section>
+
+    <!-- Slide 4: Mass Hysteria -->
+    <section class="slide slide-4" id="slide-4" data-slide="4">
+      <div class="slide-bg pattern-topo"></div>
+      <div class="slide-content">
+        <h2 class="slide-heading"><i class="fa-solid fa-people-group"></i> Mass Hysteria</h2>
+        <p class="intro">Mass hysteria is the rapid spread of collective anxiety, rumors, or beliefs through a population. It <strong>fueled</strong> McCarthyism.</p>
+        <div class="hysteria-diagram">
+          <div class="diagram-item">
+            <div class="icon-wrap"><i class="fa-solid fa-bullhorn"></i></div>
+            <span>Fear & propaganda</span>
+          </div>
+          <div class="diagram-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+          <div class="diagram-item">
+            <div class="icon-wrap"><i class="fa-solid fa-users"></i></div>
+            <span>Public panic</span>
+          </div>
+          <div class="diagram-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+          <div class="diagram-item">
+            <div class="icon-wrap"><i class="fa-solid fa-scale-unbalanced"></i></div>
+            <span>Scapegoating</span>
+          </div>
+          <div class="diagram-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+          <div class="diagram-item">
+            <div class="icon-wrap"><i class="fa-solid fa-ban"></i></div>
+            <span>Blacklists & ruin</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 5: 10 Proven Conspiracies -->
+    <section class="slide slide-5" id="slide-5" data-slide="5">
+      <div class="slide-bg pattern-docs"></div>
+      <div class="slide-content">
+        <h2 class="slide-heading"><i class="fa-solid fa-folder-open"></i> The 10 Proven Conspiracies</h2>
+        <p class="intro">Declassified documents and investigations have confirmed these. Hover for details; click for sources.</p>
+        <div class="conspiracies-grid">
+          <article class="conspiracy-card" data-conspiracy="mkultra">
+            <div class="card-icon"><i class="fa-solid fa-brain"></i></div>
+            <h3>MKUltra</h3>
+            <p>CIA mind-control experiments with LSD on unwitting citizens. Ran for years; many files were destroyed.</p>
+            <div class="card-img"><img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&q=80" alt="" loading="lazy"></div>
+            <button type="button" class="fact-check-btn" aria-label="Show source"><i class="fa-solid fa-circle-info"></i> Source</button>
+            <div class="fact-check-tooltip">Church Committee, CIA declassified docs. See footer.</div>
+          </article>
+          <article class="conspiracy-card" data-conspiracy="cointelpro">
+            <div class="card-icon"><i class="fa-solid fa-user-secret"></i></div>
+            <h3>COINTELPRO</h3>
+            <p>FBI program to disrupt and discredit civil rights and activist groups, including Dr. King.</p>
+            <div class="card-img"><img src="https://images.unsplash.com/photo-1589994965851-a8f479c573a9?w=400&q=80" alt="" loading="lazy"></div>
+            <button type="button" class="fact-check-btn" aria-label="Show source"><i class="fa-solid fa-circle-info"></i> Source</button>
+            <div class="fact-check-tooltip">FBI COINTELPRO documents, Church Committee.</div>
+          </article>
+          <article class="conspiracy-card" data-conspiracy="tuskegee">
+            <div class="card-icon"><i class="fa-solid fa-syringe"></i></div>
+            <h3>Tuskegee Syphilis Study</h3>
+            <p>U.S. Public Health Service withheld treatment from Black men with syphilis for 40 years.</p>
+            <div class="card-img"><img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=400&q=80" alt="" loading="lazy"></div>
+            <button type="button" class="fact-check-btn" aria-label="Show source"><i class="fa-solid fa-circle-info"></i> Source</button>
+            <div class="fact-check-tooltip">CDC, National Archives. Tuskegee University history.</div>
+          </article>
+          <article class="conspiracy-card" data-conspiracy="paperclip">
+            <div class="card-icon"><i class="fa-solid fa-rocket"></i></div>
+            <h3>Operation Paperclip</h3>
+            <p>U.S. brought Nazi scientists to America after WWII, hiding their war crimes to secure their expertise.</p>
+            <div class="card-img"><img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=400&q=80" alt="" loading="lazy"></div>
+            <button type="button" class="fact-check-btn" aria-label="Show source"><i class="fa-solid fa-circle-info"></i> Source</button>
+            <div class="fact-check-tooltip">U.S. government archives, Operation Paperclip by Annie Jacobsen.</div>
+          </article>
+          <article class="conspiracy-card" data-conspiracy="northwoods">
+            <div class="card-icon"><i class="fa-solid fa-bomb"></i></div>
+            <h3>Operation Northwoods</h3>
+            <p>Pentagon planned fake terrorist attacks to justify war on Cuba. Rejected by JFK.</p>
+            <div class="card-img"><img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=400&q=80" alt="" loading="lazy"></div>
+            <button type="button" class="fact-check-btn" aria-label="Show source"><i class="fa-solid fa-circle-info"></i> Source</button>
+            <div class="fact-check-tooltip">Declassified JCS documents, National Security Archive.</div>
+          </article>
+          <article class="conspiracy-card" data-conspiracy="nayirah">
+            <div class="card-icon"><i class="fa-solid fa-microphone-lines"></i></div>
+            <h3>Nayirah Testimony</h3>
+            <p>Kuwaiti ambassador's daughter lied to Congress about Iraqi atrocities to rally support for the Gulf War.</p>
+            <div class="card-img"><img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?w=400&q=80" alt="" loading="lazy"></div>
+            <button type="button" class="fact-check-btn" aria-label="Show source"><i class="fa-solid fa-circle-info"></i> Source</button>
+            <div class="fact-check-tooltip">Congressional testimony, later investigations (e.g. Harper's).</div>
+          </article>
+          <article class="conspiracy-card" data-conspiracy="tonkin">
+            <div class="card-icon"><i class="fa-solid fa-ship"></i></div>
+            <h3>Gulf of Tonkin Incident</h3>
+            <p>Fabricated or exaggerated attack used to escalate U.S. involvement in the Vietnam War.</p>
+            <div class="card-img"><img src="https://images.unsplash.com/photo-1569562211093-4ed0d0758f1a?w=400&q=80" alt="" loading="lazy"></div>
+            <button type="button" class="fact-check-btn" aria-label="Show source"><i class="fa-solid fa-circle-info"></i> Source</button>
+            <div class="fact-check-tooltip">NSA declassified documents, Pentagon Papers.</div>
+          </article>
+          <article class="conspiracy-card" data-conspiracy="business-plot">
+            <div class="card-icon"><i class="fa-solid fa-landmark"></i></div>
+            <h3>The Business Plot</h3>
+            <p>Businessmen allegedly tried to overthrow FDR with a fascist coup in 1933. Exposed by Smedley Butler.</p>
+            <div class="card-img"><img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=400&q=80" alt="" loading="lazy"></div>
+            <button type="button" class="fact-check-btn" aria-label="Show source"><i class="fa-solid fa-circle-info"></i> Source</button>
+            <div class="fact-check-tooltip">Congressional investigation (McCormack-Dickstein), historical accounts.</div>
+          </article>
+          <article class="conspiracy-card" data-conspiracy="mockingbird">
+            <div class="card-icon"><i class="fa-solid fa-newspaper"></i></div>
+            <h3>Operation Mockingbird</h3>
+            <p>CIA infiltrated and influenced American media for decades. Church Committee documented it.</p>
+            <div class="card-img"><img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=400&q=80" alt="" loading="lazy"></div>
+            <button type="button" class="fact-check-btn" aria-label="Show source"><i class="fa-solid fa-circle-info"></i> Source</button>
+            <div class="fact-check-tooltip">Church Committee reports, CIA archives.</div>
+          </article>
+          <article class="conspiracy-card" data-conspiracy="snow-white">
+            <div class="card-icon"><i class="fa-solid fa-scroll"></i></div>
+            <h3>Operation Snow White</h3>
+            <p>Scientologists infiltrated 136 U.S. government agencies to purge unfavorable records.</p>
+            <div class="card-img"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&q=80" alt="" loading="lazy"></div>
+            <button type="button" class="fact-check-btn" aria-label="Show source"><i class="fa-solid fa-circle-info"></i> Source</button>
+            <div class="fact-check-tooltip">FBI files, court documents, St. Petersburg Times investigation.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 6: The Irony -->
+    <section class="slide slide-6" id="slide-6" data-slide="6">
+      <div class="slide-bg pattern-docs"></div>
+      <div class="slide-content">
+        <h2 class="slide-heading"><i class="fa-solid fa-scale-unbalanced"></i> The Irony</h2>
+        <div class="irony-split">
+          <div class="irony-side mccarthy-side">
+            <div class="irony-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+            <h3>McCarthy hunted</h3>
+            <p>Imaginary communists. Accusations, hearings, blacklists — but the “reds under the bed” were often fantasy.</p>
+          </div>
+          <div class="irony-vs"><span>VS</span></div>
+          <div class="irony-side real-side">
+            <div class="irony-icon"><i class="fa-solid fa-folder-closed"></i></div>
+            <h3>Real conspiracies (same era)</h3>
+            <p>MKUltra, COINTELPRO, and other programs were actually happening — and stayed secret for years.</p>
+            <ul>
+              <li><i class="fa-solid fa-brain"></i> MKUltra</li>
+              <li><i class="fa-solid fa-user-secret"></i> COINTELPRO</li>
+              <li><i class="fa-solid fa-newspaper"></i> Mockingbird</li>
+            </ul>
+          </div>
+        </div>
+        <span class="stamp small-stamp">DECLASSIFIED</span>
+      </div>
+    </section>
+
+    <!-- Slide 7: Build-A-Con Workshop -->
+    <section class="slide slide-7" id="slide-7" data-slide="7">
+      <div class="slide-bg pattern-topo"></div>
+      <div class="slide-content">
+        <h2 class="slide-heading"><i class="fa-solid fa-wand-magic-sparkles"></i> Build-A-Con Workshop</h2>
+        <p class="intro">Pick one from each column to build your own ridiculous conspiracy theory.</p>
+        <div class="buildacon-columns">
+          <div class="buildacon-col" data-col="villain">
+            <h4><i class="fa-solid fa-mask"></i> Villain</h4>
+            <div class="buildacon-cards">
+              <button type="button" class="buildacon-card" data-value="Big Avocado">Big Avocado</button>
+              <button type="button" class="buildacon-card" data-value="The Lizard People">The Lizard People</button>
+              <button type="button" class="buildacon-card" data-value="Big Pharma">Big Pharma</button>
+              <button type="button" class="buildacon-card" data-value="The Illuminati">The Illuminati</button>
+              <button type="button" class="buildacon-card" data-value="The Deep State">The Deep State</button>
+              <button type="button" class="buildacon-card" data-value="Big Tech">Big Tech</button>
+            </div>
+          </div>
+          <div class="buildacon-col" data-col="target">
+            <h4><i class="fa-solid fa-bullseye"></i> Target</h4>
+            <div class="buildacon-cards">
+              <button type="button" class="buildacon-card" data-value="your morning routine">your morning routine</button>
+              <button type="button" class="buildacon-card" data-value="your dreams">your dreams</button>
+              <button type="button" class="buildacon-card" data-value="the weather">the weather</button>
+              <button type="button" class="buildacon-card" data-value="your thoughts">your thoughts</button>
+              <button type="button" class="buildacon-card" data-value="elections">elections</button>
+              <button type="button" class="buildacon-card" data-value="crop yields">crop yields</button>
+            </div>
+          </div>
+          <div class="buildacon-col" data-col="method">
+            <h4><i class="fa-solid fa-wrench"></i> Method</h4>
+            <div class="buildacon-cards">
+              <button type="button" class="buildacon-card" data-value="using mind-control chemicals in tap water">using mind-control chemicals in tap water</button>
+              <button type="button" class="buildacon-card" data-value="via 5G towers">via 5G towers</button>
+              <button type="button" class="buildacon-card" data-value="through fluoride">through fluoride</button>
+              <button type="button" class="buildacon-card" data-value="with chemtrails">with chemtrails</button>
+              <button type="button" class="buildacon-card" data-value="using subliminal ads">using subliminal ads</button>
+              <button type="button" class="buildacon-card" data-value="via social media algorithms">via social media algorithms</button>
+            </div>
+          </div>
+          <div class="buildacon-col" data-col="coverup">
+            <h4><i class="fa-solid fa-vest-patches"></i> Cover-up</h4>
+            <div class="buildacon-cards">
+              <button type="button" class="buildacon-card" data-value="and they cover it up by funding wellness influencers.">and they cover it up by funding wellness influencers.</button>
+              <button type="button" class="buildacon-card" data-value="and they cover it up by controlling the mainstream media.">and they cover it up by controlling the mainstream media.</button>
+              <button type="button" class="buildacon-card" data-value="and they cover it up with fake science.">and they cover it up with fake science.</button>
+              <button type="button" class="buildacon-card" data-value="and they cover it up by censoring researchers.">and they cover it up by censoring researchers.</button>
+              <button type="button" class="buildacon-card" data-value="and they cover it up with disinformation campaigns.">and they cover it up with disinformation campaigns.</button>
+              <button type="button" class="buildacon-card" data-value="and they cover it up by paying off politicians.">and they cover it up by paying off politicians.</button>
+            </div>
+          </div>
+        </div>
+        <div class="buildacon-output">
+          <p class="buildacon-sentence" id="buildacon-sentence">Pick one option from each column to generate your conspiracy.</p>
+          <button type="button" class="share-con-btn" id="share-con-btn" style="display: none;"><i class="fa-solid fa-link"></i> Copy shareable link</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 8: Conclusion -->
+    <section class="slide slide-8" id="slide-8" data-slide="8">
+      <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=1920&q=80');"></div>
+      <div class="slide-content">
+        <span class="stamp declassified">DECLASSIFIED</span>
+        <p class="conclusion-lead">Conspiracy theories are fun to invent, but the real ones caused harm.</p>
+        <p class="conclusion-cta">Stay curious, but stay skeptical.</p>
+        <div class="conclusion-img">
+          <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600&q=80" alt="Document or stars" loading="lazy">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <h3><i class="fa-solid fa-book"></i> References &amp; Sources</h3>
+      <p class="footer-note">The 10 proven conspiracies are based on declassified documents, congressional reports, and established historical research.</p>
+      <ul class="sources-list">
+        <li><strong>MKUltra:</strong> Church Committee, CIA declassified documents. <a href="https://www.archives.gov/research/jfk/select-committee-report" target="_blank" rel="noopener">Archives.gov</a></li>
+        <li><strong>COINTELPRO:</strong> FBI COINTELPRO documents, Church Committee. <a href="https://vault.fbi.gov/cointel-pro" target="_blank" rel="noopener">FBI Vault</a></li>
+        <li><strong>Tuskegee:</strong> CDC, National Archives. <a href="https://www.cdc.gov/tuskegee/index.html" target="_blank" rel="noopener">CDC.gov</a></li>
+        <li><strong>Operation Paperclip:</strong> U.S. government archives, historical accounts.</li>
+        <li><strong>Operation Northwoods:</strong> National Security Archive. <a href="https://nsarchive.gwu.edu/" target="_blank" rel="noopener">nsarchive.gwu.edu</a></li>
+        <li><strong>Nayirah testimony:</strong> Congressional testimony, later investigations.</li>
+        <li><strong>Gulf of Tonkin:</strong> NSA declassified documents, Pentagon Papers.</li>
+        <li><strong>Business Plot:</strong> McCormack-Dickstein Committee.</li>
+        <li><strong>Operation Mockingbird:</strong> Church Committee reports.</li>
+        <li><strong>Operation Snow White:</strong> FBI files, court documents.</li>
+      </ul>
+      <p class="credits">Icons: Font Awesome 6. Images: Unsplash (CC0), Wikimedia Commons (public domain). Fonts: Google Fonts (Poppins, Roboto).</p>
+      <p class="credits">Presentation built with HTML, CSS, and vanilla JavaScript. No frameworks.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
