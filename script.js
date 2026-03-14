@@ -124,7 +124,8 @@
   function updateSentence() {
     const s = getSelected();
     if (s.villain && s.target && s.method && s.coverup) {
-      const text = s.villain + ' is ' + s.method + ' to control ' + s.target + ', ' + s.coverup;
+      const verb = s.villain === 'The Lizard People' ? ' are ' : ' is ';
+      const text = s.villain + verb + s.method + ' to control ' + s.target + ', ' + s.coverup;
       if (sentenceEl) {
         sentenceEl.textContent = text;
         sentenceEl.classList.add('highlight');
